@@ -4,86 +4,46 @@ html(lang="ja")
     title HoloMagicians | HoloLens Creator Group Japan
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/fonts.css')
     link(rel='stylesheet', href='/css/magic.css')
   body
-    .container
-      .row.text-center.header
-        img(src='/img/logo.png', width='240', height='240')
-      .row.meetups
-        h2.container 勉強会情報
-        .container.meetup
-          img.col-md-3(src='/', style='background: #808080', width='240', height='120')
-          .row.col-md-3
-            h3 HoloLensおさわり会
-            p 15人
-            p 2016/04/28
-        .container.meetup
-          img.col-md-3(src='/', style='background: #808080', width='240', height='120')
-          .row.col-md-3
-            h3 HoloLensおさわり会
-            p 15人
-            p 2016/04/28
-        .container.meetup
-          img.col-md-3(src='/', style='background: #808080', width='240', height='120')
-          .row.col-md-3
-            h3 HoloLensおさわり会
-            p 15人
-            p 2016/04/28
-      .row.members
-        h2.container メンバー
-        .col-md-6.container.member
-          .row
-            img.member-icon.col-md-6(src='/img/miko.png')
-            ol.profile.col-md-6
-              ul 名前
-              ul 所属
-              ul MVP
-              ul SNS
-        .col-md-6.container.member
-          .row
-            img.member-icon.col-md-6(src='/img/miko.png')
-            ol.profile.col-md-6
-              ul 名前
-              ul 所属
-              ul MVP
-              ul SNS
-        .col-md-6.container.member
-          .row
-            img.member-icon.col-md-6(src='/img/miko.png')
-            ol.profile.col-md-6
-              ul 名前
-              ul 所属
-              ul MVP
-              ul SNS
-        .col-md-6.container.member
-          .row
-            img.member-icon.col-md-6(src='/img/miko.png')
-            ol.profile.col-md-6
-              ul 名前
-              ul 所属
-              ul MVP
-              ul SNS
-        .col-md-6.container.member
-          .row
-            img.member-icon.col-md-6(src='/img/miko.png')
-            ol.profile.col-md-6
-              ul 名前
-              ul 所属
-              ul MVP
-              ul SNS
-        .col-md-6.container.member
-          .row
-            img.member-icon.col-md-6(src='/img/miko.png')
-            ol.profile.col-md-6
-              ul 名前
-              ul 所属
-              ul MVP
-              ul SNS
-        .col-md-6.container.member
-          .row
-            img.member-icon.col-md-6(src='/img/miko.png')
-            ol.profile.col-md-6
-              ul 名前
-              ul 所属
-              ul MVP
-              ul SNS
+    .full-width.polygon-back
+      .container
+        .row.header
+          .logo.vcenter: img.img-responsive.center-block(src='/img/logo.png')
+    .full-width.gray-back
+      .container
+        .row.meetups
+          h2.container 勉強会情報
+          each m in meetups
+            .container.meetup
+              img.col-md-3.col-xs-12(src='/', style='background: #808080', height='120')
+              .container.col-md-9
+                h3= m.title
+                p= m.date
+                p #{m.attendees}人
+    .full-width.white-back
+      .container
+        .row.introduction
+          h2.container この勉強会について
+          .container.introduction
+            p この勉強会はほげらほげら。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            p この勉強会はほげらほげら。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            p この勉強会はほげらほげら。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        
+    .full-width.gray-back
+      .container
+        .row.members
+          h2.container メンバー
+          each m in members
+            .member.container.col-md-6.col-sm-13
+              .row
+                img.member-icon.col-xs-6(src='#{m.avater}')
+                ol.profile.col-xs-6
+                  ul: h4= m.name
+                  ul= m.belonging
+                  ul= m.title
+                  ul= m.twitter
+    .full-width.copyright-back
+      .container.text-center
+        p.vcenter copyright &copy; 2016 HoloMagicians

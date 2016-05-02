@@ -1,27 +1,52 @@
 body{
   background: #eee;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'mplus-2p-light'
 }
 
 .header{
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  height: 100vh;
+  min-height: 680px;
+}
+
+.vcenter{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.logo{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.logo img{
+  max-height: 640px;
 }
 
 .meetups{
-  background: #383635;
-  color: #fff;
   padding-bottom: 10px;
 }
 
 .meetup{
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
 .member-icon{
   border-radius: 50%;
-  width: 180px;
+  width: 140px;
+}
+
+.members{
+  padding-bottom: 10px;
 }
 
 .member{
@@ -29,10 +54,69 @@ body{
   margin-bottom: 10px;
 }
 
-.members{
-  background: #fff;
+/* max-width: @screen-sm-max */
+@media (max-width: 991px){
+  .meetup img{
+    margin-bottom: 10px;
+  }
+
+  .meetup .container{
+    padding-left: 0px;
+  }
+
+  .member.col-sm-13{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.introduction{
+  padding-bottom: 10px;
+}
+
+ol.profile{
+  padding-left: 10px;
 }
 
 ol.profile ul{
   padding-left: 0px;
+}
+
+.gray-back{
+  background-color: #383635;
+  color: #fff;
+}
+
+.white-back{
+  background-color: #fff;
+}
+
+.polygon-back{
+  background: url('/img/polygon.png');
+}
+
+.copyright-back{
+  background-color: #fff;
+  color: #333;
+  height: 33px;
+}
+
+.copyright-back div{
+  height: 100%;
+}
+
+h2{
+  font-family: 'mplus-2p-bold';
+}
+
+h3{
+  font-family: 'mplus-2p-medium';
+}
+
+ul h4{
+  font-family: 'mplus-2p-light';
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 20px;
 }
