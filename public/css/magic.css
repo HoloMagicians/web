@@ -1,0 +1,38 @@
+body{
+  background: #eee;
+}
+
+.header{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #fff;
+}
+
+.meetups{
+  background: #383635;
+  color: #fff;
+  padding-bottom: 10px;
+}
+
+.meetup{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.member-icon{
+  border-radius: 50%;
+  width: 180px;
+}
+
+.member{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.members{
+  background: #fff;
+}
+
+ol.profile ul{
+  padding-left: 0px;
+}
