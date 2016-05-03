@@ -3,9 +3,12 @@ html(lang="ja")
   head
     title HoloMagicians | HoloLens Creator Group Japan
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/fonts.css')
     link(rel='stylesheet', href='/css/magic.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js')
   body
     .full-width.polygon-back
       .container
@@ -15,13 +18,7 @@ html(lang="ja")
       .container
         .row.meetups
           h2.container 勉強会情報
-          each m in meetups
-            .container.meetup
-              img.col-md-3.col-xs-12(src='/', style='background: #808080', height='120')
-              .container.col-md-9
-                h3= m.title
-                p= m.date
-                p #{m.attendees}人
+          #meetups_container
     .full-width.white-back
       .container
         .row.introduction
@@ -47,3 +44,4 @@ html(lang="ja")
     .full-width.copyright-back
       .container.text-center
         p.vcenter copyright &copy; 2016 HoloMagicians
+    script(src='/babel/meetups.js', type='text/babel')

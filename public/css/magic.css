@@ -32,12 +32,22 @@ body{
 }
 
 .meetups{
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .meetup{
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.meetup img{
+  height: 120px;
+  background: #888;
+}
+
+.meetups .more-events{
+  font-family: 'mplus-2p-medium';
+  font-size: 20px;
 }
 
 .member-icon{
