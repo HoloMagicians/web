@@ -9,6 +9,8 @@ mixin member_info(m)
         ul= m.title
         if m.twitter
           ul: a(href='https://twitter.com/#{m.twitter}') @!{m.twitter}
+        if m.facebook
+          ul: a(href='https://facebook.com/#{m.facebook}') !{m.facebook}
 //- jade body
 doctype html
 html(lang="ja")
