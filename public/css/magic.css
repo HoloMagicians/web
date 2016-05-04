@@ -115,6 +115,22 @@ ol.profile ul{
   height: 100%;
 }
 
+.gray-back a:link{
+  color: #e4007f;
+}
+
+.gray-back a:visited{
+  color: #ba0068;
+}
+
+.gray-back a:active{
+  color: #e4007f;
+}
+
+.gray-back a:hover{
+  color: #e4007f;
+}
+
 h2{
   font-family: 'mplus-2p-bold';
 }
