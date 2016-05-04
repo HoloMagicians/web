@@ -1,3 +1,15 @@
+//- mixin declarations
+mixin member_info(m)
+  .member.container.col-md-6.col-sm-13
+    .row
+      img.member-icon.col-xs-6(src='#{m.avater}')
+      ol.profile.col-xs-6
+        ul: h4= m.name
+        ul= m.belonging
+        ul= m.title
+        if m.twitter
+          ul @!{m.twitter}
+//- jade body
 doctype html
 html(lang="ja")
   head
@@ -32,15 +44,12 @@ html(lang="ja")
       .container
         .row.members
           h2.container メンバー
-          each m in members
-            .member.container.col-md-6.col-sm-13
-              .row
-                img.member-icon.col-xs-6(src='#{m.avater}')
-                ol.profile.col-xs-6
-                  ul: h4= m.name
-                  ul= m.belonging
-                  ul= m.title
-                  ul= m.twitter
+          - var i = 0
+          while i < members.length
+            .row
+              + member_info(members[i++])
+              if i < members.length
+                + member_info(members[i++])
     .full-width.copyright-back
       .container.text-center
         p.vcenter copyright &copy; 2016 HoloMagicians
