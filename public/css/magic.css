@@ -40,9 +40,44 @@ body{
   margin-bottom: 10px;
 }
 
-.meetup img{
+.meetup .thumbnail{
   height: 120px;
+  padding: 0px;
+  background-size: cover;
+}
+
+.meetup .thumbnail p{
+  opacity: 0;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.meetup .thumbnail.done .gray-out{
+  -webkit-box-align: center; /* safari, Chrome対応 */
+  -moz-box-align: center;    /* Firefox対応 */
+  -o-box-align: center;      /* Opera対応 */
+  -ms-box-align: center;     /* IE対応 */
+  box-align: center;         /* ベンダープレフィックス無しも併記する */
+  display: -webkit-box; /* safari, Chrome */
+  display: -moz-box;    /* Firefox */
+  display: -o-box;      /* Opera */
+  display: -ms-box;     /* IE */
+  display: box;         /* ベンダープレフィックスなし */
+  background-color: rgba(100, 100, 100, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+.meetup .thumbnail.done p{
+  opacity: 1;
+}
+
+.meetup img{
   background: #888;
+  padding: 0px;
 }
 
 .meetups .more-events{

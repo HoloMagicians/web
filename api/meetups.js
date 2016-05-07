@@ -1,5 +1,9 @@
 'use strict'
 
+const fs = require('fs')
+    , path = require('path')
+    , cheerio = require('cheerio');
+
 const express = require('express')
     , router = express.Router()
     , request = require('request');
@@ -18,6 +22,7 @@ router.get('/meetups', (req, res) => {
     let events = [];
     for(let i = 0; i < 3 && i < body.events.length; ++i){
       events.push({
+        id: body.events[i].event_id,
         title: body.events[i].title,
         started_at: body.events[i].started_at,
         event_url: body.events[i].event_url,
@@ -25,6 +30,33 @@ router.get('/meetups', (req, res) => {
       });
     }
     res.send({events: events, more_events: body.events.length > 3});
+  });
+});
+
+router.get('/meetups/thumbnail/:id', (req, res) => {
+  // lookup cache
+  let cache = `${path.dirname(require.main.filename)}/cache/${req.params.id}.png`;
+  if(fs.existsSync(cache)){
+    return res.sendFile(cache);
+  }
+  // cache not hit
+  fs.closeSync(fs.openSync(cache, 'w')); 
+  let options = {
+    uri: `http://connpass.com/event/${req.params.id}`,
+    headers: {
+      'User-Agent': 'holomagicians'
+    }
+  }
+  request(options, (err, resp, body) => {
+    let $ = cheerio.load(body);
+    let thumbnail = $('.thumbnail').parent().eq(0).attr('href');
+    options.uri = thumbnail;
+    request(options)
+      .on('error', (err) => res.sendStatus(503))
+      .on('response', () => {
+        res.sendFile(cache);
+      })
+      .pipe(fs.createWriteStream(cache));
   });
 });
 

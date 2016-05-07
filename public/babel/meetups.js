@@ -16,14 +16,26 @@ var MeetupsMoreEvents = React.createClass({
     );
   }
 });
+// <img className='col-md-3 col-xs-12' src={'/api/meetups/thumbnail/' + data.id} />
 
 var Meetup = React.createClass({
   render: function(){
     var data = this.props.data;
     var d = new Date(data.started_at);
+    var current = new Date();
+    var divStyle = {
+      backgroundImage: 'url(/api/meetups/thumbnail/' + data.id + ')',
+    };
+    var done = d.getTime() < current.getTime() ? ' done' : '';
     return(
     <div className='container meetup'>
-      <img className='col-md-3 col-xs-12' src='/' />
+      <a href={data.event_url}>
+        <div className={'col-md-3 col-xs-12 thumbnail' + done} style={divStyle}>
+          <div className='gray-out'>
+            <p>終了</p>
+          </div>
+        </div>
+      </a>
       <div className='container col-md-9'>
         <h3><a href={data.event_url}>{data.title}</a></h3>
         <p>{d.getYear() + 1900}/{d.getMonth() + 1}/{d.getDate()}</p>

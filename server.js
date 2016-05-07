@@ -21,7 +21,7 @@ if(cluster.isMaster){
   app.get('/', (req, res) => {
     Q.all(data.map(s => Q.nfcall(JsonHelper, __dirname + s)))
      .then(d => {
-       res.render('index.jade', { meetups: d[0].meetups, members: d[1].members });
+       res.render('index.jade', { meetups: d[0].meetups, members: d[1].members.sort(()=>Math.random() - 0.5) });
      });
   });
   
