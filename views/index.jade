@@ -1,7 +1,7 @@
 //- mixin declarations
 mixin member_info(m)
   .member.container.col-md-6.col-sm-13
-    .row.container
+    .row
       img.member-icon.col-xs-6(src='#{m.avater}')
       ol.profile.col-xs-6
         ul: h4= m.name
@@ -50,7 +50,7 @@ html(lang="ja")
           h2.container メンバー
           - var i = 0
           while i < members.length
-            .row
+            .row.container
               + member_info(members[i++])
               if i < members.length
                 + member_info(members[i++])
