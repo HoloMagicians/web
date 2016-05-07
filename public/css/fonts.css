@@ -1,9 +1,9 @@
 @font-face{ 
-  font-family: 'mplus-2p-light';
-  src: url('/fonts/mplus-2p-light.eot');
-  src: url('/fonts/mplus-2p-light.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/mplus-2p-light.woff') format('woff'),
-       url('/fonts/mplus-2p-light.ttf') format('truetype');
+  font-family: 'mplus-2p-regular';
+  src: url('/fonts/mplus-2p-regular.eot');
+  src: url('/fonts/mplus-2p-regular.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/mplus-2p-regular.woff') format('woff'),
+       url('/fonts/mplus-2p-regular.ttf') format('truetype');
 }
 
 @font-face{ 

@@ -4,7 +4,7 @@ body{
   background-repeat: no-repeat;
   padding: 0px;
   margin: 0px;
-  font-family: 'mplus-2p-light'
+  font-family: 'mplus-2p-regular'
 }
 
 .header{
@@ -99,6 +99,10 @@ body{
   margin-bottom: 10px;
 }
 
+.member a{
+  font-family: 'mplus-2p-medium';
+}
+
 /* max-width: @screen-sm-max */
 @media (max-width: 991px){
   .meetup img{
@@ -117,6 +121,10 @@ body{
 
 .introduction{
   padding-bottom: 10px;
+}
+
+.introduction p{
+  font-size: 16px;
 }
 
 ol.profile{
@@ -175,7 +183,7 @@ h3{
 }
 
 ul h4{
-  font-family: 'mplus-2p-light';
+  font-family: 'mplus-2p-regular';
   margin: 0;
   margin-top: 10px;
   margin-bottom: 8px;
