@@ -40,7 +40,7 @@ router.get('/meetups/thumbnail/:id', (req, res) => {
     return res.sendFile(cache);
   }
   // cache not hit
-  fs.closeSync(fs.openSync(cache, 'w')); 
+  let stream = fs.createWriteStream(cache);
   let options = {
     uri: `http://connpass.com/event/${req.params.id}`,
     headers: {
@@ -56,7 +56,7 @@ router.get('/meetups/thumbnail/:id', (req, res) => {
       .on('response', () => {
         res.sendFile(cache);
       })
-      .pipe(fs.createWriteStream(cache));
+      .pipe(stream);
   });
 });
 
