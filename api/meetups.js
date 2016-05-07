@@ -54,12 +54,13 @@ router.get('/meetups/thumbnail/:id', (req, res) => {
     let $ = cheerio.load(body);
     let thumbnail = $('.thumbnail').parent().eq(0).attr('href');
     options.uri = thumbnail;
-    request(options)
-      .on('error', (err) => res.sendStatus(503))
-      .on('response', () => {
+    stream
+      .on('finish', () => {
         let file = fs.createReadStream(cache);
         return file.on('open', () => file.pipe(res));
       })
+    request(options)
+      .on('error', (err) => res.sendStatus(503))
       .pipe(stream);
   });
 });
