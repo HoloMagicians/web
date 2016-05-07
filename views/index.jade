@@ -2,8 +2,8 @@
 mixin member_info(m)
   .member.container.col-md-6.col-sm-13
     .row
-      img.member-icon.col-xs-6(src='#{m.avater}')
-      ol.profile.col-xs-6
+      img.member-icon.col-xs-4(src='#{m.avater}')
+      ol.profile.col-xs-8
         ul: h4= m.name
         if m.belonging
           ul= m.belonging
