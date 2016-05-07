@@ -35,9 +35,11 @@ router.get('/meetups', (req, res) => {
 
 router.get('/meetups/thumbnail/:id', (req, res) => {
   // lookup cache
+  res.set('Content-Type', 'image/png');
   let cache = `${__dirname}/../cache/${req.params.id}.png`;
   if(fs.existsSync(cache)){
-    return res.sendFile(cache);
+    let file = fs.createReadStream(cache);
+    return file.on('open', () => file.pipe(res));
   }
   // cache not hit
   let stream = fs.createWriteStream(cache);
@@ -54,7 +56,8 @@ router.get('/meetups/thumbnail/:id', (req, res) => {
     request(options)
       .on('error', (err) => res.sendStatus(503))
       .on('response', () => {
-        res.sendFile(cache);
+        let file = fs.createReadStream(cache);
+        return file.on('open', () => file.pipe(res));
       })
       .pipe(stream);
   });
