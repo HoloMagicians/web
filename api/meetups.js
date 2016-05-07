@@ -35,7 +35,7 @@ router.get('/meetups', (req, res) => {
 
 router.get('/meetups/thumbnail/:id', (req, res) => {
   // lookup cache
-  let cache = `${path.dirname(require.main.filename)}/cache/${req.params.id}.png`;
+  let cache = `${__dirname}/../cache/${req.params.id}.png`;
   if(fs.existsSync(cache)){
     return res.sendFile(cache);
   }
