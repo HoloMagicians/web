@@ -1,9 +1,9 @@
 {"members": [
-  {"name": "名前", "avater": "/img/miko.png", "title": "MVP", "belonging": "所属", "twitter": "xxx", "facebook": "xxx"},
-  {"name": "名前", "avater": "/img/miko.png", "title": "MVP", "belonging": "所属", "twitter": "xxx", "facebook": "xxx"},
-  {"name": "名前", "avater": "/img/miko.png", "title": "MVP", "belonging": "所属", "twitter": "xxx", "facebook": "xxx"},
-  {"name": "名前", "avater": "/img/miko.png", "title": "MVP", "belonging": "所属", "twitter": "xxx", "facebook": "xxx"},
-  {"name": "名前", "avater": "/img/miko.png", "title": "MVP", "belonging": "所属", "twitter": "xxx", "facebook": "xxx"},
-  {"name": "名前", "avater": "/img/miko.png", "title": "MVP", "belonging": "所属", "twitter": "xxx", "facebook": "xxx"},
-  {"name": "名前", "avater": "/img/miko.png", "title": "MVP", "belonging": "所属", "twitter": "xxx", "facebook": "xxx"}
+  {"name": "初音玲", "avater": "/img/avaters/akira.hatsune.jpg", "mvp": "Microsoft MVP for Windows Development", "belonging": "", "twitter": "hatsune", "facebook": "akira.hatsune"},
+  {"name": "中村薫", "avater": "/img/avaters/kaoru.nakamura.jpg", "mvp": "Microsoft MVP for Windows Development", "belonging": "", "twitter": "kaorun55", "facebook": ""},
+  {"name": "前本知志", "avater": "/img/avaters/satoshi.maemoto.jpg", "title": "", "belonging": "", "twitter": "", "facebook": "satoshi.maemoto"},
+  {"name": "田淵義人", "avater": "/img/avaters/yoshihito.tabuchi.jpg", "mvp": "Microsoft MVP for Visual Studio and Development Technologies", "belonging": "", "twitter": "ytabuchi", "facebook": ""},
+  {"name": "伊藤武仙", "avater": "/img/avaters/takehisa.ito.jpg", "title": "", "belonging": "", "twitter": "", "facebook": "takehisa.ito"},
+  {"name": "高橋理佳子", "avater": "/img/avaters/rikako.takahashi.jpg", "title": "", "belonging": "リクルート住まいカンパニー", "twitter": "tkrk0221", "facebook": "rikako.takahashi.184"},
+  {"name": "蜜葉優", "avater": "/img/avaters/yu.mitsuba.jpg", "mvp": "Microsoft MVP for Windows Development", "belonging": "silkyfeel, LLC. CEO", "title": "user experience designer / interaction developer", "twitter": "mitsuba_tan", "facebook": "mitsubayu"}
 ]}
