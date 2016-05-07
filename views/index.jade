@@ -5,8 +5,12 @@ mixin member_info(m)
       img.member-icon.col-xs-6(src='#{m.avater}')
       ol.profile.col-xs-6
         ul: h4= m.name
-        ul= m.belonging
-        ul= m.title
+        if m.belonging
+          ul= m.belonging
+        if m.title
+          ul= m.title
+        if m.mvp
+          ul= m.mvp
         if m.twitter
           ul: a(href='https://twitter.com/#{m.twitter}') @!{m.twitter}
         if m.facebook
