@@ -4,10 +4,11 @@ const express = require('express')
     , jadeStatic = require('jade-static')
     , JsonHelper = require('./lib/json.js')
     , Q = require('q')
-    , cluster = require('cluster');
+    , cluster = require('cluster')
+    , os = require('os');
 
-if(cluster.isMaster){
-  let numCPUs = require('os').cpus().length;
+if(os.platform !== 'win32' && cluster.isMaster){
+  let numCPUs = os.cpus().length;
   for(let i = 0; i < numCPUs; ++i){
     cluster.fork();
   }
