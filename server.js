@@ -7,7 +7,7 @@ const express = require('express')
     , cluster = require('cluster')
     , os = require('os');
 
-if(os.platform !== 'win32' && cluster.isMaster){
+if(os.platform() !== 'win32' && cluster.isMaster){
   let numCPUs = os.cpus().length;
   for(let i = 0; i < numCPUs; ++i){
     cluster.fork();
