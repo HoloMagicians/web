@@ -20,7 +20,7 @@ router.get('/meetups', (req, res) => {
   }
   request(options, (err, resp, body) => {
     let events = [];
-    for(let i = 0; i < 3 && i < body.events.length; ++i){
+    for(let i = 0; i < 5 && i < body.events.length; ++i){
       events.push({
         id: body.events[i].event_id,
         title: body.events[i].title,
