@@ -1,5 +1,6 @@
 'use strict'
 
+const viewItems = 5;
 const fs = require('fs')
     , path = require('path')
     , cheerio = require('cheerio');
@@ -20,7 +21,7 @@ router.get('/meetups', (req, res) => {
   }
   request(options, (err, resp, body) => {
     let events = [];
-    for(let i = 0; i < 5 && i < body.events.length; ++i){
+    for(let i = 0; i < viewItems && i < body.events.length; ++i){
       events.push({
         id: body.events[i].event_id,
         title: body.events[i].title,
@@ -29,7 +30,7 @@ router.get('/meetups', (req, res) => {
         attendees: body.events[i].accepted
       });
     }
-    res.send({events: events, more_events: body.events.length > 3});
+    res.send({events: events, more_events: body.events.length > viewItems});
   });
 });
 
