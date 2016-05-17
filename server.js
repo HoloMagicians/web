@@ -16,13 +16,11 @@ if(os.platform() !== 'win32' && cluster.isMaster){
     cluster.fork();
   });
 }else{
-  const data = ['/data/meetups.json', '/data/members.json'];
   const app = express()
-
   app.get('/', (req, res) => {
-    Q.all(data.map(s => Q.nfcall(JsonHelper, __dirname + s)))
+    Q.nfcall(JsonHelper, `${__dirname}/data/members.json`)
      .then(d => {
-       res.render('index.jade', { meetups: d[0].meetups, members: d[1].members.sort(()=>Math.random() - 0.5) });
+       res.render('index.jade', { members: d.members.sort(()=>Math.random() - 0.5) });
      });
   });
   
